@@ -1,0 +1,110 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: url('https://img.freepik.com/premium-photo/paddy-rice-field-with-digital-info-checking-technology-system-gardening-farming-icon-farmer-technology-innovation-smart-farming-systems-ai-generated-image_1019806-3597.jpg') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.container {
+  transform-style: preserve-3d;
+}
+
+.login-card {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  transform: rotateY(10deg);
+  transition: transform 0.5s ease;
+  width: 300px;
+  text-align: center;
+}
+
+.login-card:hover {
+  transform: rotateY(0deg);
+}
+
+.login-card input {
+  width: 100%;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.login-card input:focus {
+  border-color: #3a7bd5;
+  box-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
+  background-color: #f5faff;
+}
+
+.login-card button {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  background-color: #3e697e;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(58, 96, 115, 0.2);
+  transform: scale(1);
+}
+
+.login-card button:hover {
+  background-color: #2e5da0;
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 8px 20px rgba(59, 128, 223, 0.4);
+}
+
+.signup-btn {
+  background-color: transparent;
+  color: #3a6073;
+  border: 2px solid #3a6073;
+  border-radius: 6px;
+  padding: 0.75rem;
+  width: 100%;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.signup-btn:hover {
+  background-color: #3a6073;
+  color: white;
+}
+
+/* 🔥 Shine Text Animation */
+.shine-text {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 48px;
+  color: #fff;
+  background: linear-gradient(to right, #000000 0, #d8ff3e 10%, #482323 20%);
+  background-size: 200%;
+  background-position: -200px center;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s linear infinite;
+  font-family: "Poppins", sans-serif;
+}
+
+@keyframes shine {
+  0% {
+    background-position: -200px center;
+  }
+  100% {
+    background-position: 200px center;
+  }
+}

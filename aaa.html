@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-image: url('https://img.freepik.com/premium-photo/rice-field-morning-sun-farming-with-natural-ecological-vegetables-ai-generated_868611-63.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* Zanina-Yassine Button Animation */
+    .button {
+      min-width: 120px;
+      position: relative;
+      cursor: pointer;
+      padding: 12px 17px;
+      border: 0;
+      border-radius: 7px;
+      color: white;
+      transition: all 1s cubic-bezier(0.15, 0.83, 0.66, 1);
+      width: 100%;
+      font-weight: 600;
+    }
+
+    .button::before {
+      content: "";
+      width: 70%;
+      height: 1px;
+      position: absolute;
+      bottom: 0;
+      left: 15%;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 1) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      opacity: 0.2;
+      transition: all 1s cubic-bezier(0.15, 0.83, 0.66, 1);
+    }
+
+    .button:hover {
+      transform: scale(1.1) translateY(-3px);
+    }
+
+    .button:hover::before {
+      opacity: 1;
+    }
+
+    .admin-button {
+      background-color: #047857; /* Tailwind green-700 */
+    }
+
+    .admin-button:hover {
+      background-color: #065f46; /* Tailwind green-800 */
+    }
+
+    .user-button {
+      background-color: #ca8a04; /* Tailwind yellow-600 */
+    }
+
+    .user-button:hover {
+      background-color: #a16207; /* Tailwind yellow-700 */
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-black bg-opacity-60">
+  <div class="bg-white bg-opacity-90 shadow-2xl rounded-2xl p-10 max-w-md w-full text-center backdrop-blur-sm">
+    <h1 class="text-3xl font-bold mb-6 text-green-800">Welcome</h1>
+    <p class="text-gray-700 mb-8">Please choose your login type</p>
+    
+    <div class="space-y-10">
+      <!-- Admin Login -->
+      <a href="./admin.html">
+        <button class="button admin-button">Admin Login</button>
+      </a>
+
+      <!-- User Login -->
+      <a href="./user.html">
+        <button class="button user-button">User Login</button>
+      </a>
+    </div>
+  </div>
+</body>
+</html>

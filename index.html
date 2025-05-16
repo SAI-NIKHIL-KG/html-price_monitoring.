@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Price Monitoring</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Real Price Monitoring System</h1>
+
+    <form id="priceForm">
+        <input type="text" placeholder="Crop Name" id="crop_name" required>
+        <input type="text" placeholder="Location" id="location" required>
+        <input type="number" placeholder="Price" id="price" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>Latest Prices</h2>
+    <ul id="priceList"></ul>
+
+    <script>
+        const form = document.getElementById("priceForm");
+        const list = document.getElementById("priceList");
+
+        form.onsubmit = async (e) => {
+            e.preventDefault();
+            const crop_name = document.getElementById("crop_name").value;
+            const location = document.getElementById("location").value;
+            const price = parseFloat(document.getElementById("price").value);
+
+            const response = await fetch("/prices/", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ crop_name, location, price })
+            });
+
+            if (response.ok) {
+                loadPrices();
+                form.reset();
+            }
+        };
+
+        async function loadPrices() {
+            const res = await fetch("/prices/");
+            const data = await res.json();
+            list.innerHTML = "";
+            data.forEach(item => {
+                const li = document.createElement("li");
+                li.textContent = `${item.crop_name} (${item.location}) - ₹${item.price} on ${new Date(item.date).toLocaleDateString()}`;
+                list.appendChild(li);
+            });
+        }
+
+        loadPrices();
+    </script>
+</body>
+</html>
